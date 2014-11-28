@@ -1,0 +1,27 @@
+<h1>Add new conference room</h1>
+<%= form_for(:room, url: rooms_path) do |f| %>
+  <% if @room.errors.any? %>
+    <%= pluralize(@room.errors.count, "error") %> while adding room:
+    <ul>
+    <% @room.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= f.label :name, 'Room name'%><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+	<%= f.text_field :address %>
+  </P>
+  <p>
+    <%= f.label :capacity %><br>
+	<%= f.number_field :capacity %>
+  </P>
+  <%= f.submit "Add Conference hall" %>
+
+<% end %>
+
+<p><%= link_to "Finish adding holiday?",  controller: "bookings", action: "new"  %></p>

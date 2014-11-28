@@ -1,0 +1,23 @@
+<h1>Add holidays</h1>
+<%= form_for(:holiday, url: holidays_path) do |f| %>
+  <% if @holiday.errors.any? %>
+    <%= pluralize(@holiday.errors.count, "error") %> selecting holiday:
+    <ul>
+    <% @holiday.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= f.label :name, 'Holiday for'%><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+	<%= f.date_field :date, value:DateTime.now.tomorrow.to_date, min:DateTime.now.tomorrow.to_date %>
+  </P>
+  <%= f.submit "Add holiday" %>
+
+<% end %>
+
+<p><%= link_to "Finish adding holiday?",  controller: "bookings", action: "new"  %></p>
