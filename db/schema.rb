@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128012806) do
-
-  create_table "bookings", force: true do |t|
-    t.datetime "check_in_time"
-    t.datetime "check_out_time"
-    t.string   "userselect"
-    t.string   "roomselect"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141201161649) do
 
   create_table "holidays", force: true do |t|
     t.string   "name"
