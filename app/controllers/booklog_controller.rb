@@ -1,0 +1,2 @@
+class BooklogController < ApplicationController
+end

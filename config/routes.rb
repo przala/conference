@@ -12,13 +12,13 @@ post   'rooms'  => 'rooms#create'
 get    'holidays'  => 'holidays#new'
 post   'holidays'  => 'holidays#create'
 
-get    'bookings'  => 'bookings#new'
-post   'bookings'  => 'bookings#create'
+get    'booklog'  => 'booklog#new'
+post   'booklog'  => 'booklog#create'
 
 resources :users
 resources :rooms
 resources :holidays
-resources :bookings
+resources :booklog
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
